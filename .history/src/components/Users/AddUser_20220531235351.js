@@ -10,12 +10,6 @@ const AddUser = (props) => {
 
   const addUserHandler = (event) => {
     event.preventDefault();
-    if (enteredUsername.trim().length === 0 || enteredAge.trim().length === 0) {
-      return;
-    }
-    if (+enteredAge < 1) {
-      return;
-    }
     console.log(enteredUsername, enteredAge);
     setEnterUsername("");
     setEnterAge("");
@@ -29,7 +23,7 @@ const AddUser = (props) => {
     setEnterAge(event.target.value);
   };
 
-  // addUserHandler()means call immediately value是双向绑定使value为最新的值
+  // addUserHandler()means call immediately value是双向绑定
   return (
     <Card className={classes.input}>
       <form onSubmit={addUserHandler}>
@@ -42,13 +36,7 @@ const AddUser = (props) => {
           onChange={usernameChangeHandler}
         />
         <label htmlFor="age">Age (Years)</label>
-        <input
-          id="age"
-          type="number"
-          value={enteredAge}
-          name="age"
-          onChange={ageChangeHandler}
-        />
+        <input id="age" type="number" name="age" onChange={ageChangeHandler} />
         <Button type="submit">Add User</Button>
       </form>
     </Card>
