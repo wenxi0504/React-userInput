@@ -1,24 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import Card from "../UI/Card";
 import Button from "../UI/Button";
 import classes from "./AddUser.module.css";
 
 const AddUser = (props) => {
-  // enteredUser is the latest snapshot of the state
-  const [enteredUsername, setEnterUsername] = useState("");
-  const [enteredAge, setEnterAge] = useState("");
-
   const addUserHandler = (event) => {
     event.preventDefault();
-    console.log(enteredUsername, enteredAge);
-  };
-
-  const usernameChangeHandler = (event) => {
-    setEnterUsername(event.target.value);
-  };
-
-  const ageChangeHandler = (event) => {
-    setEnterAge(event.target.value);
   };
 
   // addUserHandler()means call immediately
@@ -29,11 +16,16 @@ const AddUser = (props) => {
         <input
           id="username"
           type="text"
-          onChange={usernameChangeHandler}
           name="username"
+          onChange={props.handleChange}
         />
         <label htmlFor="age">Age (Years)</label>
-        <input id="age" type="number" name="age" onChange={ageChangeHandler} />
+        <input
+          id="age"
+          type="number"
+          name="age"
+          onChange={props.handleChange}
+        />
         <Button type="submit">Add User</Button>
       </form>
     </Card>
