@@ -16,9 +16,7 @@ const AddUser = (props) => {
     if (+enteredAge < 1) {
       return;
     }
-    // lifting the state up to the parent component
     props.onAddUser(enteredUsername, enteredAge);
-
     //console.log(enteredUsername, enteredAge);
     setEnterUsername("");
     setEnterAge("");
