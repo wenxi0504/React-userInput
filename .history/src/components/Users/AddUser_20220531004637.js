@@ -1,7 +1,5 @@
 import React from "react";
-import Card from "../UI/Card";
-import classes from "./AddUser.module.css";
-
+import Card from "../../components/UI/Card";
 const AddUser = (props) => {
   const addUserHandler = (event) => {
     event.preventDefault();
@@ -9,7 +7,7 @@ const AddUser = (props) => {
 
   // addUserHandler()means call immediately
   return (
-    <Card className={classes.input}>
+    <Card>
       <form onSubmit={addUserHandler}>
         <label htmlFor="username">Username</label>
         <input
