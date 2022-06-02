@@ -20,10 +20,6 @@ const AddUser = (props) => {
       return;
     }
     if (+enteredAge < 1) {
-      setError({
-        title: "Invalid Input",
-        message: "Please enter a valid age",
-      });
       return;
     }
     // lifting the state up to the parent component
@@ -42,20 +38,10 @@ const AddUser = (props) => {
     setEnterAge(event.target.value);
   };
 
-  const errorHandler = () => {
-    setError(null);
-  };
-
   // addUserHandler()means call immediately value是双向绑定使value为最新的值
   return (
     <div>
-      {error && (
-        <ErrorModel
-          title={error.title}
-          message={error.message}
-          onConfirm={errorHandler}
-        />
-      )}
+      <ErrorModel title="An error occure" message="Something wrong" />
       <Card className={classes.input}>
         <form onSubmit={addUserHandler}>
           <label htmlFor="username">Username</label>
