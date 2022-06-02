@@ -31,14 +31,6 @@ const ErrorModel = (props) => {
         <Backdrop onConfirm={props.onConfirm} />,
         document.getElementById("backdrop-root")
       )}
-      {ReactDOM.createPortal(
-        <ModelOverlay
-          title={props.title}
-          message={props.message}
-          onConfirm={props.onConfirm}
-        />,
-        document.getElementById("overlay-root")
-      )}
     </React.Fragment>
   );
 };

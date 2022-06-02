@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import Card from "./Card";
 import Button from "./Button";
 import classes from "./ErrorModel.module.css";
@@ -25,22 +24,7 @@ const ModelOverlay = (props) => {
 };
 
 const ErrorModel = (props) => {
-  return (
-    <React.Fragment>
-      {ReactDOM.createPortal(
-        <Backdrop onConfirm={props.onConfirm} />,
-        document.getElementById("backdrop-root")
-      )}
-      {ReactDOM.createPortal(
-        <ModelOverlay
-          title={props.title}
-          message={props.message}
-          onConfirm={props.onConfirm}
-        />,
-        document.getElementById("overlay-root")
-      )}
-    </React.Fragment>
-  );
+  return <React.Fragment></React.Fragment>;
 };
 
 export default ErrorModel;
