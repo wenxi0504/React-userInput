@@ -34,8 +34,7 @@ const AddUser = (props) => {
     }
     // lifting the state up to the parent component
     props.onAddUser(enteredName, enteredUserAge);
-    nameInputRef.current.value = "";
-    ageInputRef.current.value = "";
+
     //console.log(enteredUsername, enteredAge);
     // setEnterUsername("");
     // setEnterAge("");
